@@ -10,8 +10,6 @@ This project analyzes the impact of advertising spend across multiple channels o
 - Utilize **SHAP analysis** to interpret model decisions and advertising impact.
 - Provide actionable insights to improve marketing efficiency.
 
----
-
 ## **Dataset Overview**
 - **File Name:** `Advertising_Data.csv`
 - **Rows:** 300
@@ -25,14 +23,11 @@ This project analyzes the impact of advertising spend across multiple channels o
   - **Product_Sold (Target Variable)**
 - **Purpose:** Understanding the impact of advertising spend on sales.
 
----
 ## **Results & Key Insights**
 - **Affiliate Marketing, Billboards, and Social Media drive the most sales.**  
 - **Influencer Marketing has minimal impact and may not be an effective budget allocation.**  
 - **CatBoost is the best predictive model for accurate sales forecasting.**  
 - **Market Mix Modeling suggests redistributing budget towards high-impact channels.**
-
----
 
 ## **How to Use This Project**
 1. **Data Preparation:** Load `Advertising_Data.csv` into a Pandas DataFrame.
@@ -40,19 +35,14 @@ This project analyzes the impact of advertising spend across multiple channels o
 3. **Train Machine Learning models** to predict `Product_Sold`.
 4. **Interpret feature importance** and adjust marketing strategies accordingly.
 
----
-
 ## **Technologies Used**
 - Python (pandas, numpy, matplotlib, seaborn, sklearn, statsmodels, shap)
 - **Machine Learning Models:** XGBoost, LightGBM, CatBoost, Random Forest, Gradient Boosting
 - **Statistical Modeling:** Multiple Linear Regression (MMM)
 
----
-
 ## **Contributors**
 - **Project Owner:** Jeeva Saravana Bhavanandam
----
-
+  
 ## **More on Key Analysis & Methods**
 ### **1. Exploratory Data Analysis (EDA)**
 - Data cleaning, summary statistics, and correlation heatmaps.
@@ -136,9 +126,6 @@ Trained multiple **Machine Learning models** with **hyperparameter tuning** to p
 | XGBoost              | 561.516321  | 689.412414 | 0.834057  |
 | LightGBM             | 353.088531  | 461.849407 | 0.925526  |
 | <span style="background-color:rgb(142, 206, 168); color: white;">**CatBoost**</span> | **291.855208**  | **397.906363**  | **0.944721**  |
-
-
----
 
 
 
