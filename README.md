@@ -1,4 +1,4 @@
-# **Optimizing Advertising Spend: Predictive Sales Modeling & Market Mix Analysis**
+# **Optimizing Advertising Spend: Predictive Sales Modeling, Market Mix Analysis & Marketing Campaign Performance Analysis**
 
 ## **Project Overview**
 - This project analyzes the impact of advertising spend across multiple channels on product sales. Using **Machine Learning models and statistical analysis**, we aim to **optimize budget allocation** and **predict future sales** effectively. Evaluates marketing campaigns across various channels to optimize ROI, engagement, and conversion rates. Using data-driven insights, we aim to enhance budget allocation, audience targeting, and campaign effectiveness.
