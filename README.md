@@ -1,7 +1,7 @@
 # **Optimizing Advertising Spend: Predictive Sales Modeling & Market Mix Analysis**
 
 ## **Project Overview**
-This project analyzes the impact of advertising spend across multiple channels on product sales. Using **Machine Learning models and statistical analysis**, we aim to **optimize budget allocation** and **predict future sales** effectively.
+- This project analyzes the impact of advertising spend across multiple channels on product sales. Using **Machine Learning models and statistical analysis**, we aim to **optimize budget allocation** and **predict future sales** effectively. Evaluates marketing campaigns across various channels to optimize ROI, engagement, and conversion rates. Using data-driven insights, we aim to enhance budget allocation, audience targeting, and campaign effectiveness.
 
 ## **Project Goals**
 - Identify **key advertising channels** that drive the most sales.
@@ -9,6 +9,12 @@ This project analyzes the impact of advertising spend across multiple channels o
 - Develop **predictive models** using **XGBoost, LightGBM, and CatBoost**.
 - Utilize **SHAP analysis** to interpret model decisions and advertising impact.
 - Provide actionable insights to improve marketing efficiency.
+- **Campaign Effectiveness:** Analyze **conversion rates, ROI, and acquisition costs** to identify top-performing campaigns.  
+- **Audience Segmentation:** Discover **high-engagement customer segments** for targeted marketing.  
+- **Channel Performance:** Compare channels based on **conversion, engagement, and duration impact**.  
+- **Geographical & Language Insights:** Assess **regional and linguistic factors** affecting success.  
+- **Engagement & Temporal Trends:** Examine **clicks, impressions, and seasonal trends** for optimization.  
+- **Cross-Analysis:** Investigate correlations like **ROI vs. engagement** and **conversion rate vs. acquisition cost**.
 
 ## **Dataset Overview**
 - **File Name:** `Advertising_Data.csv`
@@ -22,6 +28,16 @@ This project analyzes the impact of advertising spend across multiple channels o
   - Affiliate Marketing Spend
   - **Product_Sold (Target Variable)**
 - **Purpose:** Understanding the impact of advertising spend on sales.
+  
+- **File Name:** : `marketing_campaign_dataset.csv`
+- **Rows:** 200,000  
+- **Columns:**  
+  - **Campaign Details:** Company, Campaign Type, Duration, Channels Used  
+  - **Performance Metrics:** Conversion Rate, Acquisition Cost, ROI, Clicks, Impressions, Engagement Score  
+  - **Audience Insights:** Target Audience, Customer Segment, Location, Language  
+  - **Temporal Data:** Date
+- **Purpose:** This dataset provides comprehensive insights to refine marketing strategies and improve campaign success.  
+
 
 ## **Results & Key Insights**
 - **Affiliate Marketing, Billboards, and Social Media drive the most sales.**  
@@ -90,8 +106,6 @@ This project analyzes the impact of advertising spend across multiple channels o
 - **Influencer Marketing has mostly negative or low impact**, meaning increasing its budget may not lead to better results.
 
 
-
-
 ### **3. Market Mix Modeling (MMM)**
 
 - Built a **Multiple Linear Regression model** to analyze ROI on advertising spend.
@@ -128,6 +142,11 @@ Trained multiple **Machine Learning models** with **hyperparameter tuning** to p
 | <span style="background-color:rgb(142, 206, 168); color: white;">**CatBoost**</span> | **291.855208**  | **397.906363**  | **0.944721**  |
 
 
+## Marketing Campaign Performance Analysis - Temporal Trends
+
+![img](/images/roi.png)
+
+![img](/images/roi2.png)
 
 <div align="center">
 
