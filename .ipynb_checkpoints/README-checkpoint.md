@@ -26,6 +26,57 @@ This project analyzes the impact of advertising spend across multiple channels o
 - **Purpose:** Understanding the impact of advertising spend on sales.
 
 ---
+
+## **Key Analysis & Methods**
+### **1. Exploratory Data Analysis (EDA)**
+- Data cleaning, summary statistics, and correlation heatmaps.
+- Feature distribution analysis and scatter plots to detect trends.
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+### **2. Feature Importance (SHAP Analysis)**
+**Insights from Feature Importance & SHAP Analysis**
+
+**Feature Importance (Random Forest)**
+- **Affiliate Marketing** is the most influential factor, driving the highest impact on sales.
+- **Billboards and Social Media** also have significant effects, meaning traditional and digital advertising both play key roles.
+- **TV and Google Ads** contribute moderately to sales but are not the primary drivers.
+- **Influencer Marketing** has the least impact, suggesting it may not be an effective use of the budget.
+
+**SHAP Beeswarm Plot**
+- **Higher values of Affiliate Marketing spending strongly increase sales**, confirming its importance.
+- **Billboards and Social Media have mixed effects**, where spending more does not always guarantee higher sales.
+- **TV Ads and Google Ads show diminishing returns**, indicating that past a certain point, increasing spend does not significantly boost sales.
+- **Influencer Marketing has mostly negative or low impact**, meaning increasing its budget may not lead to better results.
+
+![alt text](image-2.png)
+![alt text](image-3.png)
+
+### **3. Market Mix Modeling (MMM)**
+- Built a **Multiple Linear Regression model** to analyze ROI on advertising spend.
+- Found optimal budget allocations for different ad platforms.
+    
+- The Multiple Linear Regression Model estimates how each advertising channel contributes to Product Sold:
+
+**Key Results:**  
+
+- Affiliate Marketing (coef: ~3.99) → Highest impact on sales.
+- Billboards (coef: ~2.99) → Significant effect on product sales.
+- Social Media (coef: ~2.50) → Contributes well to sales.
+- TV (coef: ~2.00) → Moderate impact on sales.
+- Google Ads (coef: ~1.50) → Lower impact than expected.
+- Influencer Marketing (coef: ~1.20) → Least effective channel.
+
+### **4. Predictive Sales Modeling**
+Trained multiple **Machine Learning models** with **hyperparameter tuning** to predict sales:
+- **Best Performing Model:** **CatBoost (R² = 0.9447, RMSE = 397.9)**
+- Other strong models: **LightGBM, Gradient Boosting, and XGBoost.**
+- **Linear Regression showed overfitting, and Support Vector Regression performed poorly.**
+
+---
+
 ## **Results & Key Insights**
 - **Affiliate Marketing, Billboards, and Social Media drive the most sales.**  
 - **Influencer Marketing has minimal impact and may not be an effective budget allocation.**  
@@ -51,96 +102,6 @@ This project analyzes the impact of advertising spend across multiple channels o
 
 ## **Contributors**
 - **Project Owner:** Jeeva Saravana Bhavanandam
----
-
-## **More on Key Analysis & Methods**
-### **1. Exploratory Data Analysis (EDA)**
-- Data cleaning, summary statistics, and correlation heatmaps.
-- Feature distribution analysis and scatter plots to detect trends.
-
-![alt text](images/image-7.png)
-
-- Spending is **evenly spread** across all advertising channels, but some **high-value outliers** exist.  
-- **A few extreme values** in different platforms might represent **expensive campaigns** that need analysis.  
-- The spread of data shows **some channels have a wider variance** in spending than others.
-
-
-![alt text](images/image.png)
-- **TV (17.41%) & Google Ads (17.24%)** get the highest budget, indicating priority.
-- **Billboards (16.91%) & Social Media (16.48%)** receive balanced spending across traditional & digital ads.
-- **Affiliate (16.30%) & Influencer Marketing (15.67%)** have the lowest share, suggesting cost-efficiency or lower priority.
-
-![alt text](images/image-6.png)
-
- - **Affiliate Marketing & TV** show the strongest positive correlation with sales.  
-- Other channels like **Billboards, Google Ads, and Social Media** also have slight upward trends. 
-- The **black regression line** shows the general trend of how sales increase with ad spend.  
-- **Steeper slopes indicate stronger impact** on `Product_Sold`.
-
-![alt text](images/image-1.png)
-- The histogram shows **product sales follow a near-normal distribution**, with most values between **6000-9000 units**.  
-
-
-### **2. Feature Importance (SHAP Analysis)**
-
-![alt text](images/image-2.png)
-
-**Feature Importance (Random Forest)**
-- **Affiliate Marketing** is the most influential factor, driving the highest impact on sales.
-- **Billboards and Social Media** also have significant effects, meaning traditional and digital advertising both play key roles.
-- **TV and Google Ads** contribute moderately to sales but are not the primary drivers.
-- **Influencer Marketing** has the least impact, suggesting it may not be an effective use of the budget.
-
-![alt text](images/image-3.png)
-
-**SHAP Beeswarm Plot**
-- **Higher values of Affiliate Marketing spending strongly increase sales**, confirming its importance.
-- **Billboards and Social Media have mixed effects**, where spending more does not always guarantee higher sales.
-- **TV Ads and Google Ads show diminishing returns**, indicating that past a certain point, increasing spend does not significantly boost sales.
-- **Influencer Marketing has mostly negative or low impact**, meaning increasing its budget may not lead to better results.
-
-
-
-
-### **3. Market Mix Modeling (MMM)**
-
-- Built a **Multiple Linear Regression model** to analyze ROI on advertising spend.
-- Found optimal budget allocations for different ad platforms.
-    
-![alt text](images/image-4.png)
-
-- The Multiple Linear Regression Model estimates how each advertising channel contributes to Product Sold:
-
-**Key Results:**  
-
-- Affiliate Marketing (coef: ~3.99) → Highest impact on sales.
-- Billboards (coef: ~2.99) → Significant effect on product sales.
-- Social Media (coef: ~2.50) → Contributes well to sales.
-- TV (coef: ~2.00) → Moderate impact on sales.
-- Google Ads (coef: ~1.50) → Lower impact than expected.
-- Influencer Marketing (coef: ~1.20) → Least effective channel.
-
-### **4. Predictive Sales Modeling**
-Trained multiple **Machine Learning models** with **hyperparameter tuning** to predict sales:
-- **Best Performing Model:** **CatBoost (R² = 0.9447, RMSE = 397.9)**
-- Other strong models: **LightGBM, Gradient Boosting, and XGBoost.**
-- **Linear Regression showed overfitting, and Support Vector Regression performed poorly.**
-
-| Model                  | MAE         | RMSE       | R² Score  |
-|------------------------|-------------|------------|-----------|
-| Linear Regression      | 7.085374    | 8.681355   | 0.999974  |
-| Ridge Regression      | 7.085554    | 8.681603   | 0.999974  |
-| Random Forest         | 500.784333  | 647.999283 | 0.853394  |
-| Gradient Boosting     | 362.596702  | 484.965222 | 0.917885  |
-| Support Vector Regressor | 1315.586601 | 1625.524582| 0.077452  |
-| XGBoost              | 561.516321  | 689.412414 | 0.834057  |
-| LightGBM             | 353.088531  | 461.849407 | 0.925526  |
-| <span style="background-color:rgb(142, 206, 168); color: white;">**CatBoost**</span> | **291.855208**  | **397.906363**  | **0.944721**  |
-
-
----
-
-
 
 <div align="center">
 
